@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>hr</groupId>
 	<artifactId>covidbatch</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2</version>
 	<name>covidbatch</name>
 	<description>Projekt u sklopu diplomskog rada.</description>
 

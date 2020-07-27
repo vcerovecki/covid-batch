@@ -87,9 +87,10 @@ public class PodaciUkupnoJobConfig implements BatchConfigurer {
 		return itemWriter;
 	}
 	
-	@Scheduled(cron = "0 54 19 * * ?")
+	@Scheduled(cron = "0 01 15 * * ?")
 	public void schedule() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
 		jobLauncher.run(processJob(), new JobParametersBuilder().addDate("date", new Date()).toJobParameters());
+		
 	}
 
 	@Bean
@@ -184,7 +185,7 @@ public class PodaciUkupnoJobConfig implements BatchConfigurer {
 			return itemWriter;
 		}
 		
-		@Scheduled(cron = "0 54 19 * * ?")
+		@Scheduled(cron = "0 00 15 * * ?")
 		public void zupanijeSchedule() throws JobParametersInvalidException, JobExecutionAlreadyRunningException, JobRestartException, JobInstanceAlreadyCompleteException {
 			jobLauncher.run(podacipoZupanijamaJob(), new JobParametersBuilder().addDate("date", new Date()).toJobParameters());
 		}

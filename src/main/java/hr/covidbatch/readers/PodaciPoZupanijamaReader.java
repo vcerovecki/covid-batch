@@ -28,7 +28,7 @@ public class PodaciPoZupanijamaReader implements ItemReader<List<PodaciPoZupanij
 
 	@Override
 	public List<PodaciPoZupanijama> read() throws Exception, UnexpectedInputException, ParseException, NonTransientResourceException {
-		ResponseEntity<PodaciPoZupanijama[]> responseEntity = restTemplate.getForEntity("https://www.koronavirus.hr/json/?action=po_danima_zupanijama", PodaciPoZupanijama[].class);
+		ResponseEntity<PodaciPoZupanijama[]> responseEntity = restTemplate.getForEntity("https://www.koronavirus.hr/json/?action=po_danima_zupanijama_zadnji", PodaciPoZupanijama[].class);
 		PodaciPoZupanijama[] podaciUkupno = responseEntity.getBody();
 		List<PodaciPoZupanijama> servicePodaciUkupnoList = Arrays.asList(podaciUkupno);
 		PodaciPoZupanijama podaciUkupnoLastInDb = podaciPoZupanijamaDao.getLast();
